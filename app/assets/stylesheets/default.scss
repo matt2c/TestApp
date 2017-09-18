@@ -1,0 +1,112 @@
+// Place all the styles related to the default controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "neat";
+
+$dark-blue: #212733;
+$light-gray: #9b9b9c;
+$navy-blue: #212934;
+$light-blue: #0b4e70;
+$light-green: #75c372;
+
+$neat-grid: (columns: 12, gutter: 0px);
+body {
+  font-family: $helvetica;
+  font-size: 10pt;
+}
+.container {
+  width: 100%;
+}
+.header {
+  @include grid-container;
+  height: 100px;
+  position: relative;
+}
+.main {
+  @include grid-container;
+  height: 410px;
+  position: relative;
+  @include background(image-url("logo.svg"));
+  background-size: 552px 530px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.footer {
+  @include grid-container;
+  height: 70px;
+}
+.menu {
+  @include grid-container;
+  position: absolute;
+  bottom: 0px;
+  right: 200px;
+  min-width: 400px;
+}
+.menu-item {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 10px 10px 10px 10px;
+  &.selected {
+    background-color: $dark-blue;
+    color: #fff;
+  }
+}
+.main-content {
+  @include grid-column(7);
+  padding-left: 200px;
+  .heading {
+    text-transform: uppercase;
+    font-family: "HelveticaNeueThin", "HelveticaNeue-Thin",
+      "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue",
+      'TeXGyreHerosRegular', "Arial", sans-serif;
+    display: inline-block;
+    width: 400px;
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  .text {
+    color: $light-gray;
+  }
+}
+.main-triangle {
+  position: absolute;
+  height: 252px;
+  width: 100%;
+  bottom: 0px;
+}
+.end-line {
+  width: 100%;
+  height: 100%;
+  background-color: $navy-blue;
+}
+.menu-shortcuts {
+  @include grid-container;
+  background-color: $light-blue;
+  color: white;
+  text-align: center;
+  border-bottom: 20px $navy-blue solid;
+  .shortcut-container {
+    display: inline-block;
+  }
+  .shortcut {
+    width: 190px;
+    float: left;
+    padding: 0px 30px;
+    .title {
+      text-transform: uppercase;
+      font-size: 12pt;
+      padding: 20px 0px;
+    }
+    .link {
+      padding: 20px 0px;
+      a {
+        color: $light-green;
+      }
+    }
+    .icon {
+      font-size: 40pt;
+      &.consult-icon {
+      }
+    }
+  }
+}
